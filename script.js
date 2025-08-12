@@ -30,38 +30,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitButton = document.getElementById('submit-button');
         const messageElement = document.getElementById('form-nachricht');
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent the default form submission
+      
+        e.preventDefault(); // Prevent the default form submission
 
-            // Show loading state
-            setLoading(true);
+        // Show loading state
+        setLoading(true);
 
-            // Create a FormData object from the form
-            const formData = new FormData(anmeldeformular);
+        // Create a FormData object from the form
+        const formData = new FormData(anmeldeformular);
 
-            // Use fetch to send the data to the Google Apps Script
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    showMessage('Vielen Dank! Ihre Anmeldung war erfolgreich.', 'erfolg');
-                    anmeldeformular.reset(); // Clear the form
-                } else {
-                    // Show the error message from the script if available
-                    throw new Error(data.error || 'Ein unbekannter Fehler ist aufgetreten.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showMessage(`Fehler bei der Anmeldung: ${error.message}`, 'fehler');
-            })
-            .finally(() => {
-                // Hide loading state
-                setLoading(false);
-            });
+        // Use fetch to send the data to the Google Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === 'success') {
+                showMessage('Vielen Dank! Ihre Anmeldung war erfolgreich.', 'erfolg');
+                anmeldeformular.reset(); // Clear the form
+            } else {
+                // Show the error message from the script if available
+                throw new Error(data.error || 'Ein unbekannter Fehler ist aufgetreten.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showMessage(`Fehler bei der Anmeldung: ${error.message}`, 'fehler');
+        })
+        .finally(() => {
+            // Hide loading state
+            setLoading(false);
         });
     });
 
