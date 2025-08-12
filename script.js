@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const anmeldeformular = document.getElementById('anmeldeformular');
-    const nachrichtElement = document.getElementById('form-nachricht');
+    // --- CONFIGURATION ---
+    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
+    const SCRIPT_URL = 'IHRE_WEB_APP_URL_HIER'; 
+    // --- END OF CONFIGURATION ---
 
-    anmeldeformular.addEventListener('submit', function(event) {
-        // Verhindert das Standardverhalten des Formulars (Seitenneuladen)
-        event.preventDefault();
+    const form = document.getElementById('anmeldeformular');
+    const submitButton = document.getElementById('submit-button');
+    const messageElement = document.getElementById('form-nachricht');
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent the default form submission
+        
         // Formular-Daten auslesen
         const vorname = document.getElementById('vorname').value.trim();
         const nachname = document.getElementById('nachname').value.trim();
@@ -24,20 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzX4lT6eGCqfR8_m8DOpOzWWSyYCXg2Fo9CzacFgXMa6w5F-bKQ7pJQPEG_uEfulLEGLw/exec'; 
-    
-
-        const submitButton = document.getElementById('submit-button');
-        const messageElement = document.getElementById('form-nachricht');
-
-      
-        e.preventDefault(); // Prevent the default form submission
-
         // Show loading state
         setLoading(true);
 
         // Create a FormData object from the form
-        const formData = new FormData(anmeldeformular);
+        const formData = new FormData(form);
 
         // Use fetch to send the data to the Google Apps Script
         fetch(SCRIPT_URL, {
@@ -48,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data.result === 'success') {
                 showMessage('Vielen Dank! Ihre Anmeldung war erfolgreich.', 'erfolg');
-                anmeldeformular.reset(); // Clear the form
+                form.reset(); // Clear the form
             } else {
                 // Show the error message from the script if available
                 throw new Error(data.error || 'Ein unbekannter Fehler ist aufgetreten.');
@@ -65,22 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /**
-     * Zeigt eine Statusnachricht im Formular an (Erfolg oder Fehler).
-     * @param {string} text - Der anzuzeigende Text.
-     * @param {string} typ - 'erfolg' oder 'fehler' für die entsprechende Farbe.
+     * Toggles the loading state of the submit button.
+     * @param {boolean} isLoading - True to show loading, false to hide.
      */
-    function zeigeNachricht(text, typ) {
-        nachrichtElement.textContent = text;
-        nachrichtElement.className = typ; // CSS-Klasse für die Farbe setzen
+    function setLoading(isLoading) {
+        submitButton.disabled = isLoading;
+        if (isLoading) {
+            submitButton.classList.add('loading');
+        } else {
+            submitButton.classList.remove('loading');
+        }
     }
 
     /**
-     * Überprüft eine E-Mail-Adresse auf ein gültiges Format.
-     * @param {string} email - Die zu prüfende E-Mail-Adresse.
-     * @returns {boolean} - True, wenn die E-Mail gültig ist.
+     * Displays a status message in the form.
+     * @param {string} text - The message to display.
+     * @param {string} type - 'erfolg' or 'fehler' for styling.
      */
-    function istEmailGueltig(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
+    function showMessage(text, type) {
+        messageElement.textContent = text;
+        messageElement.className = type;
     }
 });
