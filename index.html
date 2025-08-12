@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung zum Geschäftsnetzwerk-Treffen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Anmeldung zum Geschäftsnetzwerk-Treffen</h1>
+            <p>Wir freuen uns auf Ihre Teilnahme! Bitte füllen Sie das Formular aus, um sich und Ihre Begleitung anzumelden.</p>
+        </header>
+
+        <form id="anmeldeformular">
+            <div class="form-gruppe">
+                <label for="vorname">Vorname</label>
+                <input type="text" id="vorname" name="vorname" required>
+            </div>
+
+            <div class="form-gruppe">
+                <label for="nachname">Nachname</label>
+                <input type="text" id="nachname" name="nachname" required>
+            </div>
+
+            <div class="form-gruppe">
+                <label for="firma">Name der Firma</label>
+                <input type="text" id="firma" name="firma">
+            </div>
+
+            <div class="form-gruppe">
+                <label for="email">E-Mail-Adresse</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-gruppe">
+                <label for="telefon">Telefonnummer</label>
+                <input type="tel" id="telefon" name="telefon">
+            </div>
+
+            <div class="form-gruppe">
+                <label for="anzahl">Mit wie vielen Personen kommen Sie insgesamt?</label>
+                <input type="number" id="anzahl" name="anzahl" min="1" value="1" required>
+            </div>
+
+            <button type="submit">Anmeldung absenden</button>
+            <p id="form-nachricht"></p>
+        </form>
+
+        <section class="bezahlung">
+            <h2>Teilnahmegebühr</h2>
+            <p>Die Teilnahmegebühr beträgt <strong>XX,XX € pro Person</strong>. Bitte begleichen Sie den Betrag einfach und sicher über unseren PayPal-Link, nachdem Sie das Formular abgesendet haben.</p>
+            <a href="https://www.paypal.me/DEIN_PAYPAL_NAME" target="_blank" class="paypal-button">Jetzt mit PayPal bezahlen</a>
+            <p class="hinweis">Vergessen Sie nicht, im PayPal-Verwendungszweck Ihren vollständigen Namen anzugeben.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ihr Geschäftsnetzwerk</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

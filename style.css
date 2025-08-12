@@ -1,0 +1,149 @@
+/* Grundlegende Stile und Schriftarten */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Hauptcontainer für zentrierten Inhalt */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Kopfbereich */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #1a2533;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Formular-Styling */
+#anmeldeformular {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Abstand zwischen den Formulargruppen */
+}
+
+.form-gruppe {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Allgemeiner Button-Stil */
+button, .paypal-button {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, .paypal-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Absende-Button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* PayPal Sektion */
+.bezahlung {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.bezahlung h2 {
+    color: #1a2533;
+    margin-top: 0;
+}
+
+.paypal-button {
+    display: inline-block;
+    background-color: #009cde;
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.paypal-button:hover {
+    background-color: #007bb5;
+}
+
+.hinweis {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Nachrichten für den Formularstatus */
+#form-nachricht {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.erfolg {
+    color: #28a745;
+}
+
+.fehler {
+    color: #dc3545;
+}
+
+/* Fußzeile */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}
