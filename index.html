@@ -14,38 +14,42 @@
             <p>Wir freuen uns auf Ihre Teilnahme! Bitte füllen Sie das Formular aus, um sich und Ihre Begleitung anzumelden.</p>
         </header>
 
-        <form id="anmeldeformular">
+        <!-- The form name attribute must match the column headers in Google Sheets -->
+        <form id="anmeldeformular" name="anmeldeformular">
             <div class="form-gruppe">
-                <label for="vorname">Vorname</label>
-                <input type="text" id="vorname" name="vorname" required>
+                <label for="Vorname">Vorname</label>
+                <input type="text" id="Vorname" name="Vorname" required>
             </div>
 
             <div class="form-gruppe">
-                <label for="nachname">Nachname</label>
-                <input type="text" id="nachname" name="nachname" required>
+                <label for="Nachname">Nachname</label>
+                <input type="text" id="Nachname" name="Nachname" required>
             </div>
 
             <div class="form-gruppe">
-                <label for="firma">Name der Firma</label>
-                <input type="text" id="firma" name="firma">
+                <label for="Firma">Name der Firma</label>
+                <input type="text" id="Firma" name="Firma">
             </div>
 
             <div class="form-gruppe">
-                <label for="email">E-Mail-Adresse</label>
-                <input type="email" id="email" name="email" required>
+                <label for="Email">E-Mail-Adresse</label>
+                <input type="email" id="Email" name="Email" required>
             </div>
 
             <div class="form-gruppe">
-                <label for="telefon">Telefonnummer</label>
-                <input type="tel" id="telefon" name="telefon">
+                <label for="Telefon">Telefonnummer</label>
+                <input type="tel" id="Telefon" name="Telefon">
             </div>
 
             <div class="form-gruppe">
-                <label for="anzahl">Mit wie vielen Personen kommen Sie insgesamt?</label>
-                <input type="number" id="anzahl" name="anzahl" min="1" value="1" required>
+                <label for="Anzahl">Mit wie vielen Personen kommen Sie insgesamt?</label>
+                <input type="number" id="Anzahl" name="Anzahl" min="1" value="1" required>
             </div>
 
-            <button type="submit" id="submit-button">Anmeldung absenden</button>
+            <button type="submit" id="submit-button">
+                <span class="button-text">Anmeldung absenden</span>
+                <span class="spinner"></span>
+            </button>
             <p id="form-nachricht"></p>
         </form>
 

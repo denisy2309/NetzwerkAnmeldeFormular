@@ -1,4 +1,4 @@
-/* Grundlegende Stile und Schriftarten */
+/* General Body & Font Styles */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f7f9;
@@ -6,37 +6,42 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Hauptcontainer für zentrierten Inhalt */
+/* Main Container */
 .container {
     max-width: 700px;
+    width: 100%;
     margin: 40px auto;
-    padding: 30px;
+    padding: 30px 40px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Kopfbereich */
+/* Header */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 20px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 25px;
 }
 
 header h1 {
-    color: #1a2533;
-    font-size: 2em;
+    color: #212529;
+    font-size: 2.2em;
     margin-bottom: 10px;
 }
 
-/* Formular-Styling */
+/* Form Styling */
 #anmeldeformular {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Abstand zwischen den Formulargruppen */
+    gap: 22px;
 }
 
 .form-gruppe {
@@ -47,15 +52,15 @@ header h1 {
 label {
     margin-bottom: 8px;
     font-weight: 600;
-    color: #555;
+    color: #495057;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"] {
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 14px;
+    border: 1px solid #ced4da;
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -64,10 +69,10 @@ input[type="number"] {
 input:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Allgemeiner Button-Stil */
+/* Button Styles */
 button, .paypal-button {
     padding: 15px;
     border-radius: 8px;
@@ -75,25 +80,29 @@ button, .paypal-button {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover, .paypal-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Absende-Button */
-button[type="submit"] {
+/* Submit Button */
+#submit-button {
     background-color: #007bff;
     color: white;
     border: none;
+    position: relative;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+#submit-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }
-
 
 /* Spinner for loading state */
 .spinner {
@@ -119,23 +128,22 @@ button[type="submit"]:hover {
     to { transform: rotate(360deg); }
 }
 
-
-/* PayPal Sektion */
+/* Payment Section */
 .bezahlung {
     margin-top: 40px;
     padding: 25px;
     background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
     border-radius: 8px;
     text-align: center;
 }
 
 .bezahlung h2 {
-    color: #1a2533;
+    color: #212529;
     margin-top: 0;
 }
 
 .paypal-button {
-    display: inline-block;
     background-color: #009cde;
     color: white;
     text-decoration: none;
@@ -148,26 +156,22 @@ button[type="submit"]:hover {
 
 .hinweis {
     font-size: 0.9em;
-    color: #666;
+    color: #6c757d;
     margin-top: 15px;
 }
 
-/* Nachrichten für den Formularstatus */
+/* Form Status Messages */
 #form-nachricht {
     text-align: center;
     font-weight: bold;
     margin-top: 10px;
+    min-height: 1.2em;
 }
 
-.erfolg {
-    color: #28a745;
-}
+.erfolg { color: #155724; }
+.fehler { color: #721c24; }
 
-.fehler {
-    color: #dc3545;
-}
-
-/* Fußzeile */
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;

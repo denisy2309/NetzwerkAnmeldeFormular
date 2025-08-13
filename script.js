@@ -10,24 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent the default form submission
-        
-        // Formular-Daten auslesen
-        const vorname = document.getElementById('vorname').value.trim();
-        const nachname = document.getElementById('nachname').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const anzahl = document.getElementById('anzahl').value;
-
-        // Validierung: Prüfen, ob Pflichtfelder ausgefüllt sind
-        if (!vorname || !nachname || !email || !anzahl) {
-            zeigeNachricht('Bitte füllen Sie alle Pflichtfelder aus.', 'fehler');
-            return;
-        }
-
-        // Validierung: Prüfen, ob die E-Mail ein gültiges Format hat
-        if (!istEmailGueltig(email)) {
-            zeigeNachricht('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'fehler');
-            return;
-        }
 
         // Show loading state
         setLoading(true);
