@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-    const SCRIPT_URL = 'IHRE_WEB_APP_URL_HIER'; 
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzX4lT6eGCqfR8_m8DOpOzWWSyYCXg2Fo9CzacFgXMa6w5F-bKQ7pJQPEG_uEfulLEGLw/exec'; 
     // --- END OF CONFIGURATION ---
 
     const form = document.getElementById('anmeldeformular');
