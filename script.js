@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzX4lT6eGCqfR8_m8DOpOzWWSyYCXg2Fo9CzacFgXMa6w5F-bKQ7pJQPEG_uEfulLEGLw/exec'; 
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkSwdNtjfAeWLb9kKwmVJcJ_gafC5ogwNvwLyI_wda4jL6ig_IZh4J_B-15sUF2UXH/exec'; 
     // --- END OF CONFIGURATION ---
 
     const form = document.getElementById('anmeldeformular');
