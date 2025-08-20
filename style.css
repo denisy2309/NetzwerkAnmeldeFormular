@@ -32,9 +32,9 @@ header {
 }
 
 #logo {
-    max-width: 300px;
+    max-width: 330px;
     height: auto;
-    margin-bottom: 20px; /* Abstand zur Überschrift */
+    margin-bottom: 10px; /* Abstand zur Überschrift */
 }
 
 header h1 {
