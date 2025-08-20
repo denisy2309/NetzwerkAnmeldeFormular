@@ -31,6 +31,12 @@ header {
     padding-bottom: 25px;
 }
 
+#logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 25px; /* Abstand zur Überschrift */
+}
+
 header h1 {
     color: #ffffff; /* Reines Weiß für die Überschrift */
     font-size: 2.2em;
