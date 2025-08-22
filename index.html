@@ -44,6 +44,21 @@
                 <input type="tel" id="Telefon" name="Telefon">
             </div>
 
+            <div class="form-gruppe">
+                <label for="Netzwerk-Club">Aus welchem Netzwerk-Club kommen Sie?</label>
+                <select id="Netzwerk-Club" name="Netzwerk-Club" required>
+                    <option value="BNI">BNI</option>
+                    <option value="Wecon">Wecon</option>
+                    <option value="Dakon">Dakon</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+            </div>
+
+            <div class="form-gruppe" id="sonstiges-container">
+                <label for="NetzwerkClubSonstiges">Bitte Netzwerk-Club eingeben</label>
+                <input type="text" id="NetzwerkClubSonstiges" name="NetzwerkClubSonstiges">
+            </div>
+
             <!-- <div class="form-gruppe">
                 <label for="Anzahl">Mit wie vielen Personen kommen Sie insgesamt?</label>
                 <input type="number" id="Anzahl" name="Anzahl" min="1" value="1" required>

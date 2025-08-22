@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit-button');
     const messageElement = document.getElementById('form-nachricht');
 
+    const brancheSelect = document.getElementById('Branche');
+    const sonstigesContainer = document.getElementById('sonstiges-container');
+
+    brancheSelect.addEventListener('change', function() {
+        if (this.value === 'sonstiges') {
+            sonstigesContainer.style.display = 'block';
+        } else {
+            sonstigesContainer.style.display = 'none';
+        }
+    });
+
     form.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent the default form submission
 
@@ -27,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.result === 'success') {
                 showMessage('Vielen Dank! Ihre Anmeldung war erfolgreich.', 'erfolg');
                 form.reset(); // Clear the form
+                sonstigesContainer.style.display = 'none';
             } else {
                 // Show the error message from the script if available
                 throw new Error(data.error || 'Ein unbekannter Fehler ist aufgetreten.');
