@@ -8,17 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit-button');
     const messageElement = document.getElementById('form-nachricht');
 
-    const brancheSelect = document.getElementById('Netzwerk-Club');
-    const sonstigesContainer = document.getElementById('sonstiges-container');
-
-    brancheSelect.addEventListener('change', function() {
-        if (this.value === 'sonstiges') {
-            sonstigesContainer.style.display = 'block';
-        } else {
-            sonstigesContainer.style.display = 'none';
-        }
-    });
-
     form.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent the default form submission
 
