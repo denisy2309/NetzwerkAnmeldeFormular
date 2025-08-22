@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.result === 'success') {
                 showMessage('Vielen Dank! Ihre Anmeldung war erfolgreich.', 'erfolg');
                 form.reset(); // Clear the form
-                sonstigesContainer.style.display = 'none';
             } else {
                 // Show the error message from the script if available
                 throw new Error(data.error || 'Ein unbekannter Fehler ist aufgetreten.');
