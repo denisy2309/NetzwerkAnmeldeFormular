@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit-button');
     const messageElement = document.getElementById('form-nachricht');
 
-    const brancheSelect = document.getElementById('Branche');
+    const brancheSelect = document.getElementById('Netzwerk-Club');
     const sonstigesContainer = document.getElementById('sonstiges-container');
 
     brancheSelect.addEventListener('change', function() {
